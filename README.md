@@ -2,10 +2,12 @@ case-watcher
 ============
 
 Creates a watched cases report and sends it via email.
-
 Watched cases are those tagged "watch"
 
+[Blog post discussing this functionality in more detail](http://dovetailsoftware.com/clarify/gsherman/2014/08/04/watching-cases-in-dovetail-2014-edition/)
+
 ## Dependencies
+1. [Dovetail SDK](https://support.dovetailsoftware.com/selfservice/products/show/Dovetail%20SDK)
 1. [Dovetail Bootstrap](https://github.com/DovetailSoftware/dovetail-bootstrap) - used for generating recent case history information
 1. [MailChimp](http://mailchimp.com/) - used for in-lining CSS. Sign up for a free account.
 1. [Dovetail Agent 5](https://support.dovetailsoftware.com/selfservice/products/show/Dovetail%20Agent)
