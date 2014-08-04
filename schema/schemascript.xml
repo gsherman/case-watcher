@@ -1,0 +1,29 @@
+<schemaScript xmlns="http://www.dovetailsoftware.com/2006/10/SchemaScript.xsd">
+    
+  <addView  id="501" name="tagged_case_alst" />
+
+    <addViewColumn name="objid" view="tagged_case_alst" table="act_entry" column="objid" >
+        <clarifyGenericFieldID>3</clarifyGenericFieldID>
+    </addViewColumn>
+    <addViewColumn name="entry_time"  view="tagged_case_alst" table="act_entry" column="entry_time"/>
+    <addViewColumn name="act_code" view="tagged_case_alst" table="act_entry" column="act_code" />
+    <addViewColumn name="add_info" view="tagged_case_alst" table="act_entry" column="addnl_info" />
+
+    <addViewColumn name="parent_objid" view="tagged_case_alst" table="case" column="objid" />
+    <addViewColumn name="parent_id" view="tagged_case_alst" table="case" column="id_number" />
+    <addViewColumn name="modify_stmp" view="tagged_case_alst" table="case" column="modify_stmp" />
+    
+    <addViewColumn name="act_name" view="tagged_case_alst" table="gbst_elm" column="title" />
+
+    <addViewColumn name="tag" view="tagged_case_alst" table="tag" column="title" />
+    <addViewColumn name="tag_objid" view="tagged_case_alst" table="tag" column="objid" />
+        
+    <addViewColumn name="tag_owner_name" view="tagged_case_alst" table="user" column="login_name" />
+    <addViewColumn name="tag_owner_objid" view="tagged_case_alst" table="user" column="objid" />
+    
+    <addJoin view="tagged_case_alst" kind="Inner" table="act_entry" relation="act_entry2case"/>
+    <addJoin view="tagged_case_alst" kind="Inner" table="act_entry" relation="entry_name2gbst_elm"/>
+    <addJoin view="tagged_case_alst" kind="Inner" table="case" relation="case2tag"/>
+    <addJoin view="tagged_case_alst" kind="Inner" table="tag" relation="tag2user" />
+    
+</schemaScript> 
